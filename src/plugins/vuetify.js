@@ -13,6 +13,9 @@ import { createVuetify } from 'vuetify'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
+  icons: {
+    defaultSet: "mdi"
+  },
   theme: {
     defaultTheme: 'system',
     themes: [
@@ -25,10 +28,6 @@ export default createVuetify({
           platinum: 'hsl(220 10% 85%)',
           graphite: 'hsl(220 8% 25%)',
           charcoal: 'hsl(220 10% 15%)',
-          'gradient-primary': 'linear-gradient(135deg, hsl(0 0% 6%) 0%, hsl(220 10% 15%) 50%, hsl(0 0% 8%) 100%)',
-          'gradient-metalic': 'linear-gradient(135deg, hsl(220 10% 85%) 0%, hsl(0 0% 75%) 50%, hsl(220 10% 85%) 100%)' ,
-          'gradient-glass': 'linear-gradient(135deg, hsla(0 0% 100% / 0.05) 0%, hsla(0 0% 100% / 0.02) 100%)',
-
         },
         variables: {
           'container-max-width': '1400px',
@@ -53,3 +52,8 @@ export default createVuetify({
     ]
   },
 })
+
+
+// 'gradient-primary': 'linear-gradient(135deg, hsl(0 0% 6%) 0%, hsl(220 10% 15%) 50%, hsl(0 0% 8%) 100%)',
+// 'gradient-metalic': 'linear-gradient(135deg, hsl(220 10% 85%) 0%, hsl(0 0% 75%) 50%, hsl(220 10% 85%) 100%)' ,
+// 'gradient-glass': 'linear-gradient(135deg, hsla(0 0% 100% / 0.05) 0%, hsla(0 0% 100% / 0.02) 100%)',

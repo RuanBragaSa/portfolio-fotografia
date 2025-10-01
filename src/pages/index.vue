@@ -1,7 +1,9 @@
 <template>
-  <HelloWorld />
+  <div>
+    <v-icon icon="material-symbols--camera"></v-icon>
+  </div>
 </template>
 
-<script setup>
+<script>
   //
 </script>
