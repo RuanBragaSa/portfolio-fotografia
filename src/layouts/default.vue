@@ -2,7 +2,7 @@
 
   <v-layout class="rounded rounded-md border">
     <v-app-bar :elevation="2">
-      <v-app-bar-title class="text" style="">Roberta</v-app-bar-title>
+      <v-app-bar-title class="title" style="">Roberta</v-app-bar-title>
 
       <template v-slot:append>
         <v-btn icon="mdi-heart"></v-btn>
