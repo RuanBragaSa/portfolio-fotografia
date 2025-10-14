@@ -12,6 +12,12 @@
 
     <v-main>
       <div style="height: 100vh; background-color: red;">
+        <a href="#portfolio">
+          Descubra meu trabalho
+        </a>
+
+      </div>
+      <div style="height: 100vh; background-color: red;">
         <section id="sobre">
           <h2>Sobre</h2>
           <p>Conteúdo da seção Sobre...</p>
@@ -30,8 +36,6 @@
         </section>
       </div>
     </v-main>
-
-
   </v-layout>
 </template>
 
