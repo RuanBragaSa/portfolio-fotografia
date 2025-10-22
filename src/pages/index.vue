@@ -1,35 +1,42 @@
 <template>
   <v-layout>
     <v-app-bar id="app-bar" :color="appBarColor" :elevation="0" style="position: fixed;" >
-      <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver));"><b>Roberta</b></v-app-bar-title>
+      <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver));" @click="onClick(0)"><b>Roberta</b></v-app-bar-title>
 
-      <template v-slot:append>
-        <a href="#sobre">Sobre</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#contato">Contato</a>
-      </template>
+      <v-btn v-for="button in buttons" class="custom-button" variant="text" :href="button.href" @click="onClick(button.href)">{{ button.name }}</v-btn>
     </v-app-bar>
 
     <v-main>
       <div style="height: 100vh; background-color: red;">
-        <a href="#portfolio">
-          Descubra meu trabalho
-        </a>
-
-      </div>
-      <div style="height: 100vh; background-color: red;">
-        <section id="sobre">
+        <section id="home">
           <h2>Sobre</h2>
           <p>Conteúdo da seção Sobre...</p>
         </section>
       </div>
+      
       <div style="height: 100vh; background-color: blue;">
         <section id="portfolio">
           <h2>Portfólio</h2>
           <p>Conteúdo da seção Portfólio...</p>
         </section>
       </div>
+
+      <div style="height: 100vh; background-color: pink;">
+        <section id="sobre">
+          <h2>Sobre</h2>
+          <p>Conteúdo da seção Sobre...</p>
+        </section>
+      </div>
+
       <div style="height: 100vh; background-color: green;">
+        <section id="servicos">
+          <h2>Sobre</h2>
+          <p>Conteúdo da seção Sobre...</p>
+        </section>
+      </div>
+
+
+      <div style="height: 100vh; background-color: purple;">
         <section id="contato">
           <h2>Contato</h2>
           <p>Conteúdo da seção Contato...</p>
@@ -40,7 +47,9 @@
 </template>
 
 <script setup>
+import { useGoTo } from 'vuetify'
 
+const goTo = useGoTo()
 const appBarColor = ref("transparent")
 
 onMounted(() => {
@@ -48,6 +57,50 @@ onMounted(() => {
     appBarColor.value = window.scrollY === 0 ? "transparent" : "rgb(var(--v-theme-charcoal))"
   })
 })
+
+  const options = computed(() => ({
+    container: '#goto-container-example',
+    duration: duration.value,
+    easing: easing.value,
+    offset: offset.value,
+  }))
+
+  const buttons = [
+    {
+      href: "#home",
+      name: "Home"
+    },
+    {
+      href: "#portfolio",
+      name: "Portfólio"
+    },
+    {
+      href: "#sobre",
+      name: "Sobre"
+    },
+    {
+      href: "#servicos",
+      name: "Serviços"
+    },
+    {
+      href: "#contato",
+      name: "Contanto"
+    },
+  ]
+
+  const scrollConfig = {
+        duration: 200,
+        easing: "easeInOutCubic"
+      }
+
+  function onClick(querySelector) {
+    if (querySelector === "#home") {
+      goTo(0, scrollConfig)
+      return
+    }
+      goTo(querySelector, scrollConfig)
+  }
+
 </script>
 
 <style>
@@ -66,5 +119,11 @@ onMounted(() => {
     transition: all 0.3s 10ms;
     transition-timing-function: ease;
     background-repeat: no-repeat;
+  }
+
+  .custom-button {
+    font-family: "Inter", sans-serif !important;
+    font-weight: lighter !important;
+    text-transform: none !important;
   }
 </style>
