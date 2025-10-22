@@ -4,21 +4,9 @@
       <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver));" @click="onClick(0)"><b>Roberta</b></v-app-bar-title>
 
       <v-btn v-for="button in buttons" class="custom-button" variant="text" :href="button.href" @click="onClick(button.href)">{{ button.name }}</v-btn>
-      <!-- <v-btn class="custom-button" variant="text" href="#home">Home</v-btn>
-      <v-btn class="custom-button" variant="text" href="#portfolio">Portfólio</v-btn>
-      <v-btn class="custom-button" variant="text" href="#sobre">Sobre</v-btn>
-      <v-btn class="custom-button" variant="text" href="#servicos">Serviços</v-btn>
-      <v-btn class="custom-button" variant="text" href="#contato">Contato</v-btn> -->
-        
     </v-app-bar>
 
     <v-main>
-      <!-- <div style="height: 100vh; background-color: red;">
-        <a href="#portfolio">
-          Descubra meu trabalho
-        </a>
-      </div> -->
-
       <div style="height: 100vh; background-color: red;">
         <section id="home">
           <h2>Sobre</h2>
