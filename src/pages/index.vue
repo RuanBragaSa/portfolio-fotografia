@@ -9,7 +9,7 @@
     <v-main>
       <div>
         <section id="home">
-         <Home @to-portfolio="onClick('#portfolio')" @to-contato="onClick('#contato')"/>
+         <Home @to-portfolio="onClick('#portfolio')" @to-contato="onClick('#contato')" @to-servicos="onClick('#servicos')"/>
         </section>
       </div>
       
@@ -102,7 +102,6 @@ onMounted(() => {
     }
       goTo(querySelector, scrollConfig)
   }
-
 </script>
 
 <style>

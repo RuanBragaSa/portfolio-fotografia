@@ -35,26 +35,21 @@
         </v-row>
 
         <v-row justify="center" class="mb-15" dense>
-          <v-btn icon="mdi-instagram" class="mr-2"></v-btn>
-          <v-btn icon="mdi-facebook" class="ml-2"></v-btn>
+          <v-btn icon="mdi-instagram" class="mr-2" href="https://www.instagram.com" target="blank"></v-btn>
+          <v-btn icon="mdi-facebook" class="ml-2" href="https://www.facebook.com/?locale=pt_BR" target="blank"></v-btn>
         </v-row>
 
-        <p class="scroll-down-descubra-meu-trabalho">Descubra meu trabalho</p>
-        <v-icon>mdi-arrow-down</v-icon>
-
+        <div @click="$emit('to-servicos')" style="cursor: pointer;">
+          <p class="scroll-down-descubra-meu-trabalho">Descubra meu trabalho</p>
+          <v-icon>mdi-arrow-down</v-icon>
+        </div>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script setup>
-  import { defineEmits } from 'vue';
 
-  // const emit = defineEmits(['clicando'])
-
-  // function clicar () {
-  //   emit ('cli')
-  // }
 </script>
 
 <style scoped>
