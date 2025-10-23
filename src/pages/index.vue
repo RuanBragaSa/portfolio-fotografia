@@ -1,16 +1,15 @@
 <template>
   <v-layout>
     <v-app-bar id="app-bar" :color="appBarColor" :elevation="0" style="position: fixed;" >
-      <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver));" @click="onClick(0)"><b>Roberta</b></v-app-bar-title>
+      <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver)); font-size: x-large; font-weight: normal;" @click="onClick(0)"><b>Roberta</b></v-app-bar-title>
 
       <v-btn v-for="button in buttons" class="custom-button" variant="text" :href="button.href" @click="onClick(button.href)">{{ button.name }}</v-btn>
     </v-app-bar>
 
     <v-main>
-      <div style="height: 100vh; background-color: red;">
+      <div>
         <section id="home">
-          <h2>Sobre</h2>
-          <p>Conteúdo da seção Sobre...</p>
+         <Home @to-portfolio="onClick('#portfolio')" @to-contato="onClick('#contato')"/>
         </section>
       </div>
       
@@ -47,6 +46,7 @@
 </template>
 
 <script setup>
+import Home from '@/components/Home.vue'
 import { useGoTo } from 'vuetify'
 
 const goTo = useGoTo()
@@ -89,13 +89,15 @@ onMounted(() => {
   ]
 
   const scrollConfig = {
-        duration: 200,
+        duration: 300,
         easing: "easeInOutCubic"
       }
 
   function onClick(querySelector) {
+    console.log();
+    
     if (querySelector === "#home") {
-      goTo(0, scrollConfig)
+      goTo(0, { ...scrollConfig, offset: 0 });
       return
     }
       goTo(querySelector, scrollConfig)
@@ -124,6 +126,7 @@ onMounted(() => {
   .custom-button {
     font-family: "Inter", sans-serif !important;
     font-weight: lighter !important;
+    font-size: medium;
     text-transform: none !important;
   }
 </style>
