@@ -13,10 +13,9 @@
         </section>
       </div>
       
-      <div style="height: 100vh; background-color: blue;">
+      <div>
         <section id="portfolio">
-          <h2>Portfólio</h2>
-          <p>Conteúdo da seção Portfólio...</p>
+          <Portfolio/>
         </section>
       </div>
 
@@ -47,6 +46,7 @@
 
 <script setup>
 import Home from '@/components/Home.vue'
+import Portfolio from '@/components/Portfolio.vue'
 import { useGoTo } from 'vuetify'
 
 const goTo = useGoTo()
