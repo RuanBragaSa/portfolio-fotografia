@@ -3,7 +3,7 @@
     <v-app-bar id="app-bar" :color="appBarColor" :elevation="0" style="position: fixed;" >
       <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver)); font-size: x-large; font-weight: normal;" @click="onClick(0)"><b>Roberta</b></v-app-bar-title>
 
-      <v-btn v-for="button in buttons" class="custom-button" variant="text" :href="button.href" @click="onClick(button.href)">{{ button.name }}</v-btn>
+      <v-btn v-for="button in buttons" class="custom-button" variant="text"  @click="onClick(button.href)">{{ button.name }}</v-btn>
     </v-app-bar>
 
     <v-main>
@@ -67,7 +67,7 @@ onMounted(() => {
 
   const buttons = [
     {
-      href: "#home",
+      href: 0,
       name: "Home"
     },
     {
@@ -94,14 +94,13 @@ onMounted(() => {
       }
 
   function onClick(querySelector) {
-    console.log();
-    
-    if (querySelector === "#home") {
-      goTo(0, { ...scrollConfig, offset: 0 });
-      return
-    }
-      goTo(querySelector, scrollConfig)
+  if (querySelector === 0 || querySelector === "#home") {
+    goTo(0, { ...scrollConfig, offset: 0 });
+    return
   }
+
+  goTo(querySelector, scrollConfig)
+}
 </script>
 
 <style>
