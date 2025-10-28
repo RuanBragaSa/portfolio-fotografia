@@ -59,10 +59,6 @@ const images = ref([
 </script>
 
 <style scoped>
-#portfolio {
-  background-color: #121212;
-  color: #d1d1d1;
-}
 
 .portfolio-card {
   border-radius: 12px;
