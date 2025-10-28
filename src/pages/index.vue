@@ -20,14 +20,14 @@
       </div>
 
       <div style="height: 100vh; background-color: pink;">
-        <section id="sobre">
+        <section id="servicos">
           <h2>Sobre</h2>
           <p>Conteúdo da seção Sobre...</p>
         </section>
       </div>
 
       <div style="height: 100vh; background-color: green;">
-        <section id="servicos">
+        <section id="sobre">
           <h2>Sobre</h2>
           <p>Conteúdo da seção Sobre...</p>
         </section>
@@ -75,12 +75,12 @@ onMounted(() => {
       name: "Portfólio"
     },
     {
-      href: "#sobre",
-      name: "Sobre"
-    },
-    {
       href: "#servicos",
       name: "Serviços"
+    },
+    {
+      href: "#sobre",
+      name: "Sobre"
     },
     {
       href: "#contato",
@@ -109,6 +109,7 @@ onMounted(() => {
 
   .title {
     font-family: 'Playfair Display', serif;
+    cursor: default;
   }
 
   .text {
