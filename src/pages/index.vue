@@ -19,10 +19,9 @@
         </section>
       </div>
 
-      <div style="height: 100vh; background-color: pink;">
+      <div>
         <section id="servicos">
-          <h2>Sobre</h2>
-          <p>Conteúdo da seção Sobre...</p>
+          <Servicos/>
         </section>
       </div>
 
@@ -47,6 +46,7 @@
 <script setup>
 import Home from '@/components/Home.vue'
 import Portfolio from '@/components/Portfolio.vue'
+import Servicos from '@/components/Servicos.vue'
 import { useGoTo } from 'vuetify'
 
 const goTo = useGoTo()

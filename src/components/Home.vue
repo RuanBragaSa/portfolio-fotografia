@@ -11,7 +11,7 @@
       class="text-center"
     >
       <v-col cols="12" md="8">
-        <h1 class="display-2 font-weight-bold">Roberta</h1>
+        <h1 class="display-2 font-weight-bold" style="color: rgb(var(--v-theme-silver));">Roberta</h1>
         <h3 class="subtitle-1 mt-4 mb-6">Fotógrafa Profissional</h3>
         <p class="body-1 mb-6">
           Capturando momentos únicos com elegância e sofisticação em Portugal
@@ -54,7 +54,7 @@
 
 <style scoped>
 .home-section {
-  background-color: #121212;
+  background-color: rgb(var(--v-theme-background));
   color: rgb(var(--v-theme-silver));
   min-height: 80vh;
 }

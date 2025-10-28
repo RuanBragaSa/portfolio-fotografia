@@ -1,7 +1,7 @@
 <template>
   <v-container id="portfolio" class="text-center d-flex flex-column justify-center align-center"
   style="padding-top: 80px; min-height: 100vh;">
-    <h1 class="title">Portfólio</h1>
+    <h1 class="title" style="color: rgb(var(--v-theme-silver));">Portfólio</h1>
     <p class="mb-5">
       Uma seleção cuidadosa dos meus trabalhos mais marcantes, onde cada imagem conta uma história única
     </p>
@@ -75,11 +75,13 @@ h1{
   font-family: 'Playfair Display';
   font-size: 80px;
   letter-spacing: 5px;
+  color: rgb(var(--v-theme-silver));
 }
 
 p{
   font-family: "Inter", sans-serif !important;
   font-weight: 300;
   font-size: 20px;
+  color: rgb(var(--v-theme-silver));
 }
 </style>
