@@ -15,7 +15,7 @@
       
       <div>
         <section id="portfolio">
-          <Portfolio/>
+          <Portfolio @portfolio-to-servicos="onClick('#servicos')"/>
         </section>
       </div>
 

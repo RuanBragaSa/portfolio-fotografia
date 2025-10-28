@@ -77,7 +77,6 @@ p {
   font-family: "Inter", sans-serif !important;
   font-weight: 300;
   font-size: 20px;
-  text-transform: none !important;
 }
 
 .v-btn {
