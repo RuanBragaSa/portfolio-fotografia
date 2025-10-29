@@ -25,10 +25,9 @@
         </section>
       </div>
 
-      <div style="height: 100vh; background-color: green;">
+      <div>
         <section id="sobre">
-          <h2>Sobre</h2>
-          <p>Conteúdo da seção Sobre...</p>
+          <Sobre/>
         </section>
       </div>
 
@@ -47,6 +46,7 @@
 import Home from '@/components/Home.vue'
 import Portfolio from '@/components/Portfolio.vue'
 import Servicos from '@/components/Servicos.vue'
+import Sobre from '@/components/Sobre.vue'
 import { useGoTo } from 'vuetify'
 
 const goTo = useGoTo()
