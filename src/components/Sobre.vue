@@ -107,5 +107,4 @@
     color: rgb(var(--v-theme-silver));
   }
 
-
 </style>

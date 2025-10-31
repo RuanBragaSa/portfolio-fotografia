@@ -11,9 +11,9 @@
       class="text-center"
     >
       <v-col cols="12" md="8">
-        <h1 class="display-2 font-weight-bold" style="color: rgb(var(--v-theme-silver));">Roberta</h1>
+        <h1 class="display-2 font-weight-bold mb-15" style="color: rgb(var(--v-theme-silver));">Roberta</h1>
         <h3 class="subtitle-1 mt-4 mb-6">Fotógrafa Profissional</h3>
-        <p class="body-1 mb-6">
+        <p class="body-1 mb-15">
           Capturando momentos únicos com elegância e sofisticação em Portugal
         </p>
         <v-row justify="center" class="mt-15 mb-15" dense>

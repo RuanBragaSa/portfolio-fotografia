@@ -32,13 +32,13 @@
       </div>
 
 
-      <div style="height: 100vh; background-color: purple;">
+      <div>
         <section id="contato">
-          <h2>Contato</h2>
-          <p>Conteúdo da seção Contato...</p>
+          <Contato/>
         </section>
       </div>
     </v-main>
+    <AppFooter/>
   </v-layout>
 </template>
 

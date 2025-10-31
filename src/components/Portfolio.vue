@@ -27,7 +27,7 @@
           <v-img
             :src="image"
             height="350"
-            width="200"
+            width="250"
             cover
             class="rounded-lg"
             alt="foto do portfólio"
@@ -38,7 +38,7 @@
 
     <div @click="$emit('portfolio-to-servicos')" style="cursor: pointer;">
       <p class="text-body-1 mb-15">
-        Interessado em ver mais do meu trabalho?
+        Interessado em ver mais do meu trabalho ?
       </p>
     </div>
 
