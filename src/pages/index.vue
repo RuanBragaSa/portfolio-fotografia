@@ -1,46 +1,56 @@
 <template>
   <v-layout>
     <v-app-bar id="app-bar" :color="appBarColor" :elevation="0" style="position: fixed;" >
-      <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver));"><b>Roberta</b></v-app-bar-title>
+      <v-app-bar-title class="title" style="color: rgb(var(--v-theme-silver)); font-size: x-large; font-weight: normal;" @click="onClick(0)"><b>Roberta</b></v-app-bar-title>
 
-      <template v-slot:append>
-        <a href="#sobre">Sobre</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#contato">Contato</a>
-      </template>
+      <v-btn v-for="button in buttons" class="custom-button" variant="text"  @click="onClick(button.href)">{{ button.name }}</v-btn>
     </v-app-bar>
 
     <v-main>
-      <div style="height: 100vh; background-color: red;">
-        <a href="#portfolio">
-          Descubra meu trabalho
-        </a>
-
-      </div>
-      <div style="height: 100vh; background-color: red;">
-        <section id="sobre">
-          <h2>Sobre</h2>
-          <p>Conteúdo da seção Sobre...</p>
+      <div>
+        <section id="home">
+         <Home @to-portfolio="onClick('#portfolio')" @to-contato="onClick('#contato')" @to-servicos="onClick('#servicos')"/>
         </section>
       </div>
-      <div style="height: 100vh; background-color: blue;">
+      
+      <div>
         <section id="portfolio">
-          <h2>Portfólio</h2>
-          <p>Conteúdo da seção Portfólio...</p>
+          <Portfolio @portfolio-to-servicos="onClick('#servicos')"/>
         </section>
       </div>
-      <div style="height: 100vh; background-color: green;">
+
+      <div>
+        <section id="servicos">
+          <Servicos/>
+        </section>
+      </div>
+
+      <div>
+        <section id="sobre">
+          <Sobre/>
+        </section>
+      </div>
+
+
+      <div>
         <section id="contato">
-          <h2>Contato</h2>
-          <p>Conteúdo da seção Contato...</p>
+          <Contato/>
         </section>
       </div>
     </v-main>
+    <Footer></Footer>
   </v-layout>
 </template>
 
 <script setup>
+import Home from '@/components/Home.vue'
+import Portfolio from '@/components/Portfolio.vue'
+import Servicos from '@/components/Servicos.vue'
+import Sobre from '@/components/Sobre.vue'
+import Footer from '@/components/Footer.vue'
+import { useGoTo } from 'vuetify'
 
+const goTo = useGoTo()
 const appBarColor = ref("transparent")
 
 onMounted(() => {
@@ -48,6 +58,50 @@ onMounted(() => {
     appBarColor.value = window.scrollY === 0 ? "transparent" : "rgb(var(--v-theme-charcoal))"
   })
 })
+
+  const options = computed(() => ({
+    container: '#goto-container-example',
+    duration: duration.value,
+    easing: easing.value,
+    offset: offset.value,
+  }))
+
+  const buttons = [
+    {
+      href: 0,
+      name: "Home"
+    },
+    {
+      href: "#portfolio",
+      name: "Portfólio"
+    },
+    {
+      href: "#servicos",
+      name: "Serviços"
+    },
+    {
+      href: "#sobre",
+      name: "Sobre"
+    },
+    {
+      href: "#contato",
+      name: "Contato"
+    },
+  ]
+
+  const scrollConfig = {
+        duration: 300,
+        easing: "easeInOutCubic"
+      }
+
+  function onClick(querySelector) {
+  if (querySelector === 0 || querySelector === "#home") {
+    goTo(0, { ...scrollConfig, offset: 0 });
+    return
+  }
+
+  goTo(querySelector, scrollConfig)
+}
 </script>
 
 <style>
@@ -56,6 +110,7 @@ onMounted(() => {
 
   .title {
     font-family: 'Playfair Display', serif;
+    cursor: default;
   }
 
   .text {
@@ -66,5 +121,12 @@ onMounted(() => {
     transition: all 0.3s 10ms;
     transition-timing-function: ease;
     background-repeat: no-repeat;
+  }
+
+  .custom-button {
+    font-family: "Inter", sans-serif !important;
+    font-weight: lighter !important;
+    font-size: medium;
+    text-transform: none !important;
   }
 </style>
