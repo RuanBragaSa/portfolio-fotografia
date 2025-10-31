@@ -38,7 +38,7 @@
         </section>
       </div>
     </v-main>
-    <AppFooter/>
+    <Footer></Footer>
   </v-layout>
 </template>
 
@@ -47,6 +47,7 @@ import Home from '@/components/Home.vue'
 import Portfolio from '@/components/Portfolio.vue'
 import Servicos from '@/components/Servicos.vue'
 import Sobre from '@/components/Sobre.vue'
+import Footer from '@/components/Footer.vue'
 import { useGoTo } from 'vuetify'
 
 const goTo = useGoTo()
@@ -84,7 +85,7 @@ onMounted(() => {
     },
     {
       href: "#contato",
-      name: "Contanto"
+      name: "Contato"
     },
   ]
 

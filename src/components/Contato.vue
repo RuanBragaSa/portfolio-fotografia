@@ -40,7 +40,7 @@
               <v-icon size="28" color="platinum" class="mr-3">mdi-map-marker-outline</v-icon>
             </v-col>
             <v-col>
-              <div class="text-silver text-body-2">Localização</div>
+              <div class="text-silver text-body-2" style="">Localização</div>
               <div class="text-platinum">Portugal - Serviços em todo o país</div>
             </v-col>
           </v-row>
@@ -60,6 +60,8 @@
         <v-card flat class="px-4 py-3 rounded-xl" style="background-color: hsl(0 0% 10%);">
           <div class="text-platinum font-weight-bold mb-2">Horário de Atendimento</div>
           <div class="text-silver text-body-2">Segunda a Sexta: 9h às 18h</div>
+          <div class="text-silver text-body-2">Sábado: 10h às 16h</div>
+          <div class="text-silver text-body-2">Domingo: Sob consulta</div>
         </v-card>
       </v-col>
       <v-col cols="12" md="6">
@@ -127,7 +129,7 @@
                   color="platinum"
                   size="large"
                   prepend-icon="mdi-send-outline"
-                  style="color: black;"
+                  style="color: black; font-weight: bold;"
                 >
                   Enviar Mensagem
                 </v-btn>
@@ -161,4 +163,23 @@
     font-size: 18px !important; 
     color: rgb(var(--v-theme-silver));
   }
+
+  .v-textarea{
+    font-family: "Inter", sans-serif !important;
+    color: rgb(var(--v-theme-silver));
+  }
+
+  .v-text-field{
+    font-family: "Inter", sans-serif !important;
+    list-style: none;
+    color: rgb(var(--v-theme-silver));
+  }
+
+
+
+  .v-btn{
+    font-family: 'Playfair Display' !important;
+    text-transform: none !important;
+  }
+  
 </style>
